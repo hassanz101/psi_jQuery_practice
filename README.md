@@ -1,5 +1,7 @@
 ## jQuery Practice Project
 
+# DURING LECTURE
+
 Write the code to make clicking on the 'change-highlight' button give a box on the DOM the 'highlight' class to turn the box red.
 Each time the 'change-highlight' button is clicked, it should give the next square
 the 'highlight' class.
