@@ -8,13 +8,16 @@
   you are also welcome to write more than the given functions.
 */
 var numberOfSquares = 10;
+var start = 0;
+var end = 0 - 1;
+
 
 $(document).ready(onReady);
 
 //Function that runs when html is fully loaded:
 function onReady(){
   //click listener to button:
-  $('.change-highlight').on('click', highlightASquare)
+  $('.change-highlight').on('click', highlightASquare);
 
   //call to put starting squares on DOM
   appendSquaresToDom(numberOfSquares);
@@ -23,10 +26,25 @@ function onReady(){
 function highlightASquare(index){
   //This variable stores an array of the elements with the 'square' class
   var arrayOfSquares = $('.square');
+  //Each time the 'change-highlight' button is clicked, it should give the next square the 'highlight' class.
 
+  $(arrayOfSquares[start]).addClass('highlight');
+  start++;
+
+  $(arrayOfSquares[end]).removeClass('highlight');
+  end++;
+
+  if(start > arrayOfSquares.length) {
+    start=0;
+    end= 0 - 1;
+  }
+//
 }
 
 
+//Each time the 'change-highlight' button is clicked, it should give the next square the 'highlight' class.
+
+//you dont need to change this
 function appendSquaresToDom(number){
   var squaresToAppend = "";
  //concatenate string of squares
